@@ -13,8 +13,10 @@ typedef struct Specificateur_Format
     void (*f)(va_list);
 } specif;
 
+int _putchar(char c);
 int _printf(const char *format, ...);
 void print_char(va_list);
 void print_string(va_list);
-void print_percent(va_list);
+void print_int(va_list);
+void print_hexa(va_list);
 #endif
