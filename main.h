@@ -1,5 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
+#include <stdarg.h>
 
 /**
  *Specificateur_Format - Structure of Specificateur
@@ -9,9 +10,11 @@
 typedef struct Specificateur_Format
 {
     char c;
-
+    void (*f)(va_list);
 } specif;
 
-
-
+int _printf(const char *format, ...);
+void print_char(va_list);
+void print_string(va_list);
+void print_percent(va_list);
 #endif
