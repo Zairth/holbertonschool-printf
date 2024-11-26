@@ -17,3 +17,33 @@ int _printf(const char *format, ...)
 
 	return (0);
 }
+
+/**
+ *print_char - print a char
+ *@args: the char to print
+ *Return: void return
+ */
+void print_char(va_list args)
+{
+
+}
+
+/**
+ *print_string - print a strings
+ *@args: the string to print
+ *Return: void return
+ */
+void print_string(va_list args)
+{
+	
+}
+
+/**
+ *print_percent - print a percent
+ *@args: the percent to print
+ *Return: void return
+ */
+void print_percent(va_list args)
+{
+	
+}
