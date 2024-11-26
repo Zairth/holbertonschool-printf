@@ -17,6 +17,4 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 int print_char(va_list);
 int print_string(va_list);
-int print_int(va_list);
-int print_hexa(va_list);
 #endif

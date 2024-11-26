@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 {
 	specif_t specif_format[] = {
 		{'c', print_char}, {'s', print_string},
-		{'d', print_int}, {'i', print_hexa}, {'\0', NULL}
+		{'\0', NULL}
 	};
 	va_list args;
 	int i = 0, total_words = 0, j, k;
@@ -80,44 +80,6 @@ int print_char(va_list args)
 int print_string(va_list args)
 {
 	char *str = va_arg(args, char *);
-	int i = 0;
-
-	while (str != NULL)
-	{
-		_putchar(str[i]);
-		i++;
-	}
-
-	return (i);
-}
-
-/**
- *print_int - print an int
- *@args: the int to print
- *Return: int return
- */
-int print_int(va_list args)
-{
-	char *str = va_arg(args, int);
-	int i = 0;
-
-	while (str != NULL)
-	{
-		_putchar(str[i]);
-		i++;
-	}
-
-	return (i);
-}
-
-/**
- *print_hexa - print an int in hexadecimal format
- *@args: the int to print in hexadecimal
- *Return: int return
- */
-int print_hexa(va_list args)
-{
-	char *str = va_arg(args, int);
 	int i = 0;
 
 	while (str != NULL)
