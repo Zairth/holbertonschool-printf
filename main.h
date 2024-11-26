@@ -11,7 +11,7 @@ typedef struct Specificateur_Format
 {
     char *c;
     void (*f)(va_list);
-} specif;
+} specif_t;
 
 int _putchar(char c);
 int _printf(const char *format, ...);

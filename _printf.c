@@ -5,7 +5,7 @@
 
 int _printf(const char *format, ...)
 {
-	specif specif_format[] = {
+	specif_t specif_format[] = {
 		{"%c", print_char},
 		{"%s", print_string},
 		{"%d", print_int},
