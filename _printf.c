@@ -38,6 +38,7 @@ int _printf(const char *format, ...)
 			if (format[i] != '\0')
 				i++;
 		}
+		va_end(args);
 		_putchar('\n');
 		return (total_words + i);
 	}
