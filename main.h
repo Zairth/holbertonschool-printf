@@ -9,7 +9,7 @@
  */
 typedef struct Specificateur_Format
 {
-	char *c;
+	char c;
 	int (*f)(va_list);
 } specif_t;
 
