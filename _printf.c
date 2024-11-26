@@ -5,11 +5,12 @@
 
 int _printf(const char *format, ...)
 {
-	specif specif_format[] = {
+	specif_t specif_format[] = {
 		{"%c", print_char},
 		{"%s", print_string},
-		{"%%", print_percent},
-		{'\0', NULL}
+		{"%d", print_int},
+		{"%i", print_hexa},
+		{NULL, NULL}
 	};
 	va_list args;
 
@@ -39,11 +40,21 @@ void print_string(va_list args)
 }
 
 /**
- *print_percent - print a percent
- *@args: the percent to print
+ *print_int - print an int
+ *@args: the int to print
  *Return: void return
  */
-void print_percent(va_list args)
+void print_int(va_list args)
+{
+	
+}
+
+/**
+ *print_hexa - print an int in hexadecimal format
+ *@args: the int to print in hexadecimal
+ *Return: void return
+ */
+void print_hexa(va_list args)
 {
 	
 }
