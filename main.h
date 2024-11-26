@@ -3,14 +3,14 @@
 #include <stdarg.h>
 
 /**
- *Specificateur_Format - Structure of Specificateur
+ *struct Specificateur_Format - Structure of Specificateur
  *@c: The char associated to the right function
  *@f: The function associated to the char
  */
 typedef struct Specificateur_Format
 {
-    char *c;
-    int (*f)(va_list);
+	char *c;
+	int (*f)(va_list);
 } specif_t;
 
 int _putchar(char c);

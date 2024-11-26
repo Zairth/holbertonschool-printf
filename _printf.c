@@ -3,39 +3,35 @@
 #include <stdarg.h>
 #include "main.h"
 
+/**
+ *_printf - A homemade printf
+ *@format: the str to print
+ *@...: the variadic arguments
+ *Return: int return
+ */
 int _printf(const char *format, ...)
 {
 	specif_t specif_format[] = {
-		{'c', print_char},
-		{'s', print_string},
-		{'d', print_int},
-		{'i', print_hexa},
-		{'\0', NULL}
+		{'c', print_char}, {'s', print_string},
+		{'d', print_int}, {'i', print_hexa}, {'\0', NULL}
 	};
 	va_list args;
-	int i = 0;
-	int j, k;
-	int total_words = 0;
-	char *missing_arg = "Missing Arguments.";
-	char *missing_specif = "Missing Specificator.";
+	int i = 0, total_words = 0, j, k;
+	char *miss_arg = "Missing Arguments.", *miss_specif = "Missing Specificator.";
 
 	va_start(args, format);
-
 	if (format != NULL)
 	{
 		if (args == NULL)
 		{
 			k = 0;
-			while (missing_arg[k] != NULL)
+			while (miss_arg[k] != NULL)
 			{
-				_putchar(missing_arg[k]);
+				_putchar(miss_arg[k]);
 				k++;
-			}
-			exit(1);
-		}
-		while (format[i] != NULL)
+			} exit(1);
+		} while (format[i] != NULL)
 		{
-			// _printf("Hello world %s%s", str, str2)
 			j = 0;
 			while (specif_format[j].c != '\0')
 			{
@@ -45,18 +41,16 @@ int _printf(const char *format, ...)
 			}
 			_putchar(format[i]);
 			i++;
-		}
-	} else
+		} return (total_words + i);
+	} else if (format == NULL && args != NULL)
 	{
 		k = 0;
-		while (missing_specif[k] != NULL)
+		while (miss_specif[k] != NULL)
 		{
-			_putchar(missing_specif[k]);
+			_putchar(miss_specif[k]);
 			k++;
-		}
-		exit(2);
-	}
-	return (0);
+		} exit(1);
+	} return (0);
 }
 
 /**
