@@ -6,9 +6,9 @@
 int _printf(const char *format, ...)
 {
 	specif specif_format[] = {
-		{'c', print_char},
-		{'s', print_string},
-		{'%', print_percent},
+		{"%c", print_char},
+		{"%s", print_string},
+		{"%%", print_percent},
 		{'\0', NULL}
 	};
 	va_list args;
