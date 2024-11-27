@@ -66,7 +66,7 @@ int _printf(const char *format, ...)
 		va_end(args);
 		return (total_words);
 	}
-	return (2);
+	return (-1);
 }
 
 /**
