@@ -15,6 +15,7 @@ int _printf(const char *format, ...)
 		{'s', print_string},
 		{'c', print_char},
 		{'d', print_int},
+		{'i', print_hexa},
 		{'\0', NULL}
 	};
 	va_list args;
@@ -150,5 +151,17 @@ int print_int(va_list args)
 	if (MIN_hit == 1)
 		n++;
 	_putchar(n + '0');
+	return (0);
+}
+
+/**
+ *print_hexa - print an int
+ *@args: the int to print
+ *Return: int return
+ */
+int print_hexa(va_list args)
+{
+	int n = va_arg(args, int);
+	_putchar(n);
 	return (0);
 }
