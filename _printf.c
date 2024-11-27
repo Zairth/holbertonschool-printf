@@ -40,6 +40,7 @@ int _printf(const char *format, ...)
 		}
 		va_end(args);
 		_putchar('\n');
+		printf("%d", total_words + i);
 		return (total_words + i);
 	}
 	return (0);
@@ -55,13 +56,15 @@ int print_char(va_list args)
 	int j = 0;
 	char str = va_arg(args, int);
 
-	while ((str >= 'a' && str <= 'z') || (str >= 'A' && str <= 'Z'))
+	if ((str >= 'a' && str <= 'z') || (str >= 'A' && str <= 'Z'))
 	{
 		if (str == '\0')
-			break;
+			goto breaak;
 		_putchar(str);
 		j++;
 	}
+
+	breaak:
 
 	if (j == 0)
 	{
@@ -76,7 +79,7 @@ int print_char(va_list args)
 		exit(1);
 	}
 
-	return (1);
+	return (-1);
 }
 
 /**
@@ -112,5 +115,5 @@ int print_string(va_list args)
 		exit(1);
 	}
 
-	return (i);
+	return (i - 2);
 }

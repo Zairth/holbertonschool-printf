@@ -9,7 +9,6 @@
  */
 int main(void)
 {
-
-	_printf("Mon prenom est %s, mon nom est %s, ma lettre est %c");
+	_printf("Mon prenom est %s");
     return (0);
 }
