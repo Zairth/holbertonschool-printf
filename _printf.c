@@ -12,38 +12,43 @@
 int _printf(const char *format, ...)
 {
 	specif_t specif_format[] = {
-		{'s', print_string},
-		{'c', print_char},
-		{'\0', NULL}
+		{'s', print_string}, {'c', print_char}, {'\0', NULL}
 	};
 	va_list args;
-	int i = 0, total_words = 0, j;
+	int i = 0, total_words = 0, j, format_found = 0;
 
 	va_start(args, format);
-	if (format != NULL)
-	{
 		while (format[i] != '\0')
 		{
-			j = 0;
-			while (specif_format[j].c != '\0')
+			if (format[i] == '%')
 			{
-				if (format[i] == '%' && format[i + 1] == specif_format[j].c)
+				j = 0;
+				while (specif_format[j].c != '\0')
 				{
-					total_words += specif_format[j].f(args);
-					i += 2;
+					if (specif_format[j].c == format[i + 1])
+					{
+						total_words += specif_format[j].f(args);
+						i += 2;
+						format_found++;
+						break;
+					} j++;
 				}
-				j++;
-			}
-			_putchar(format[i]);
-			if (format[i] != '\0')
+				if (!format_found)
+				{
+					_putchar(format[i]);
+					i++;
+					total_words++;
+				}
+			} else
+			{
+				_putchar(format[i]);
+				total_words++;
 				i++;
-		}
-		va_end(args);
+			}
+		} va_end(args);
 		_putchar('\n');
-		printf("%d", total_words + i);
-		return (total_words + i);
-	}
-	return (0);
+		printf("%d", total_words);
+		return (total_words);
 }
 
 /**
@@ -53,33 +58,10 @@ int _printf(const char *format, ...)
  */
 int print_char(va_list args)
 {
-	int j = 0;
-	char str = va_arg(args, int);
+	int str = va_arg(args, int);
 
-	if ((str >= 'a' && str <= 'z') || (str >= 'A' && str <= 'Z'))
-	{
-		if (str == '\0')
-			goto breaak;
-		_putchar(str);
-		j++;
-	}
-
-	breaak:
-
-	if (j == 0)
-	{
-		int k = 0;
-		char *miss_arg = "Missing Arguments, char touched\n";
-
-		while (miss_arg[k] != '\0')
-		{
-			_putchar(miss_arg[k]);
-			k++;
-		}
-		exit(1);
-	}
-
-	return (-1);
+	_putchar(str);
+	return (1);
 }
 
 /**
@@ -89,31 +71,16 @@ int print_char(va_list args)
  */
 int print_string(va_list args)
 {
-	int i = 0, j = 0;
+	int i = 0;
 	char *str = NULL;
+
 	str = va_arg(args, char *);
 
-	while ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
+	while (str[i] != '\0')
 	{
-		if (str[i] == '\0')
-			break;
 		_putchar(str[i]);
 		i++;
-		j++;
 	}
 
-	if (j == 0)
-	{
-		int k = 0;
-		char *miss_arg = "Missing Arguments, string touched\n";
-
-		while (miss_arg[k] != '\0')
-		{
-			_putchar(miss_arg[k]);
-			k++;
-		}
-		exit(1);
-	}
-
-	return (i - 2);
+	return (i);
 }

@@ -9,6 +9,8 @@
  */
 int main(void)
 {
-	_printf("Mon prenom est %s");
+	char prenom = 'C';
+	char *nom = "Etienne";
+	_printf("Mon prenom est %c, mon nom est %s", prenom, nom);
     return (0);
 }
