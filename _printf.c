@@ -12,8 +12,8 @@
 int _printf(const char *format, ...)
 {
 	specif_t specif_format[] = {
-		{'c', print_char},
 		{'s', print_string},
+		{'c', print_char},
 		{'\0', NULL}
 	};
 	va_list args;
@@ -52,8 +52,8 @@ int _printf(const char *format, ...)
  */
 int print_char(va_list args)
 {
-	char str = va_arg(args, int);
 	int j = 0;
+	char str = va_arg(args, int);
 
 	if ((str >= 'a' && str <= 'z') || (str >= 'A' && str <= 'Z'))
 		j++;
@@ -61,7 +61,7 @@ int print_char(va_list args)
 	if (j == 0)
 	{
 		int k = 0;
-		char *miss_arg = "Missing Arguments.\n";
+		char *miss_arg = "Missing Arguments, char touched\n";
 
 		while (miss_arg[k] != '\0')
 		{
@@ -82,12 +82,23 @@ int print_char(va_list args)
  */
 int print_string(va_list args)
 {
+	int i = 0, k = 0;
 	char *str = va_arg(args, char *);
-	int i = 0;
+
+	while (str[k] != '\0')
+		k++;
 
 	if (str == NULL)
 	{
-		str = "NULL";
+		int k = 0;
+		char *miss_arg = "Missing Arguments, string touched\n";
+
+		while (miss_arg[k] != '\0')
+		{
+			_putchar(miss_arg[k]);
+			k++;
+		}
+		exit(1);
 	}
 
 	while (str[i] != '\0')
