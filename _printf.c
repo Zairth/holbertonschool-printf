@@ -41,9 +41,17 @@ int _printf(const char *format, ...)
 				}
 				if (!format_found)
 				{
-					_putchar(format[i]);
-					i++;
-					total_words++;
+					if (format[i] == '%' && format[i + 1] == '%')
+					{
+						i++;
+						continue;
+					}
+					else
+					{
+						_putchar(format[i]);
+						i++;
+						total_words++;
+					}
 				}
 			}
 			else 
