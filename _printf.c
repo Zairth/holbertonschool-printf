@@ -12,12 +12,17 @@
 int _printf(const char *format, ...)
 {
 	specif_t specif_format[] = {
-		{'s', print_string}, {'c', print_char}, {'\0', NULL}
+		{'s', print_string},
+		{'c', print_char},
+		{'\0', NULL}
 	};
 	va_list args;
 	int i = 0, total_words = 0, j, format_found = 0;
 
 	va_start(args, format);
+
+	if (format != NULL)
+	{
 		while (format[i] != '\0')
 		{
 			if (format[i] == '%')
@@ -31,7 +36,8 @@ int _printf(const char *format, ...)
 						i += 2;
 						format_found++;
 						break;
-					} j++;
+					}
+					j++;
 				}
 				if (!format_found)
 				{
@@ -39,16 +45,18 @@ int _printf(const char *format, ...)
 					i++;
 					total_words++;
 				}
-			} else
+			}
+			else 
 			{
 				_putchar(format[i]);
 				total_words++;
 				i++;
 			}
-		} va_end(args);
-		_putchar('\n');
-		printf("%d", total_words);
+		}
+		va_end(args);
 		return (total_words);
+	}
+	return (0);
 }
 
 /**
@@ -59,7 +67,6 @@ int _printf(const char *format, ...)
 int print_char(va_list args)
 {
 	int str = va_arg(args, int);
-
 	_putchar(str);
 	return (1);
 }
@@ -73,7 +80,6 @@ int print_string(va_list args)
 {
 	int i = 0;
 	char *str = NULL;
-
 	str = va_arg(args, char *);
 
 	while (str[i] != '\0')
