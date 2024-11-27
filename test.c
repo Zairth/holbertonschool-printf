@@ -9,13 +9,7 @@
  */
 int main(void)
 {
-	char *prenom = "Luca";
-	char *nom = "Gimenez";
-	char lettre = 'C';
 
-	_printf("Je m'apelle %s, mon nom est %s, et ma lettre est %c", prenom, nom, lettre);
-	_printf("Mon prénom commence par la lettre %c", lettre);
-	_printf("%c");
-	_printf("%s");
+	_printf("Mon prenom est %s, mon nom est %s, ma lettre est %c");
     return (0);
 }
