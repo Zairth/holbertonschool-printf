@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 		{'\0', NULL}
 	};
 	va_list args;
-	int i = 0, total_words = 0, j, result = 0;
+	int i = 0, total_words = 0, j;
 
 	va_start(args, format);
 	if (format != NULL)
@@ -29,10 +29,7 @@ int _printf(const char *format, ...)
 			{
 				if (format[i] == '%' && format[i + 1] == specif_format[j].c)
 				{
-					result = specif_format[j].f(args);
-					if (result == -1)
-						return (-1);
-					total_words += result;
+					total_words += specif_format[j].f(args);
 					i += 2;
 				}
 				j++;
@@ -55,9 +52,29 @@ int _printf(const char *format, ...)
  */
 int print_char(va_list args)
 {
+	int j = 0;
 	char str = va_arg(args, int);
 
-	_putchar(str);
+	while ((str >= 'a' && str <= 'z') || (str >= 'A' && str <= 'Z'))
+	{
+		if (str == '\0')
+			break;
+		_putchar(str);
+		j++;
+	}
+
+	if (j == 0)
+	{
+		int k = 0;
+		char *miss_arg = "Missing Arguments, char touched\n";
+
+		while (miss_arg[k] != '\0')
+		{
+			_putchar(miss_arg[k]);
+			k++;
+		}
+		exit(1);
+	}
 
 	return (1);
 }
@@ -92,7 +109,7 @@ int print_string(va_list args)
 			_putchar(miss_arg[k]);
 			k++;
 		}
-		return -1;
+		exit(1);
 	}
 
 	return (i);
