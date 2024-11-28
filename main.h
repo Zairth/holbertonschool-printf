@@ -15,6 +15,8 @@ typedef struct Specificateur_Format
 
 int _putchar(char c);
 int _printf(const char *format, ...);
+specif_t *get_specif_format();
+int find_specifier(char c, specif_t *specif_format);
 int print_char(va_list);
 int print_string(va_list);
 int print_int(va_list);
