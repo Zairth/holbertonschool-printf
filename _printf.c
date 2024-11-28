@@ -111,12 +111,14 @@ int print_int(va_list args)
 	int count = 8;
 	int modulo = 1000000000;
 	int division = 100000000;
+	int number_of_char = 0;
 	int n = va_arg(args, int);
 
 	if (n < 0)
 	{
 		n = n * (-1);
 		_putchar('-');
+		number_of_char++;
 	}
 	if (n != 0)
 	{
@@ -132,11 +134,15 @@ int print_int(va_list args)
 			modulo /= 10;
 			division /= 10;
 			count--;
+			number_of_char++;
 		}
 		n %= 10;
 	}
+	else
+		return (0);
+
 	_putchar(n + '0');
-	return (0);
+	return (number_of_char++);
 }
 
 /**
@@ -146,6 +152,5 @@ int print_int(va_list args)
  */
 int print_decimal(va_list args)
 {
-	print_int(args);
-	return (0);
+	return(print_int(args));
 }
