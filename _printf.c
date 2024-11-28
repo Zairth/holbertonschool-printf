@@ -139,7 +139,7 @@ int print_int(va_list args)
 		n %= 10;
 	}
 	else
-		return (0);
+		return (-1);
 
 	_putchar(n + '0');
 	return (number_of_char++);
