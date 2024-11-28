@@ -108,12 +108,15 @@ int print_string(va_list args)
  */
 int print_int(va_list args)
 {
-	int count = 8;
-	int modulo = 1000000000;
-	int division = 100000000;
-	int number_of_char = 0;
+	int MIN_hit = 0, count = 8, modulo = 1000000000;
+	int division = 100000000, number_of_char = 0;
 	int n = va_arg(args, int);
 
+	if (n == -2147483648)
+	{
+		n++;
+		MIN_hit++;
+	}
 	if (n < 0)
 	{
 		n = n * (-1);
@@ -122,11 +125,19 @@ int print_int(va_list args)
 	}
 	if (n != 0)
 	{
-		while (modulo / 10 > n)
+		if (n > modulo)
 		{
-			modulo /= 10;
-			division /= 10;
-			count--;
+			_putchar((n / 1000000000) + '0');
+			number_of_char++;
+		}
+		else
+		{
+			while (modulo / 10 > n)
+			{
+				modulo /= 10;
+				division /= 10;
+				count--;
+			}
 		}
 		while (count != 0)
 		{
@@ -140,7 +151,8 @@ int print_int(va_list args)
 	}
 	else
 		return (-1);
-
+	if (MIN_hit == 1)
+		n++;
 	_putchar(n + '0');
 	return (number_of_char++);
 }
