@@ -147,7 +147,7 @@ int print_int(va_list args)
 
 /**
  *print_decimal - print a decimal
- *@args: the int to print
+ *@args: the decimal to print
  *Return: int return
  */
 int print_decimal(va_list args)
