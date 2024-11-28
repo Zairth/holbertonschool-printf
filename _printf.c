@@ -62,6 +62,9 @@ int print_char(va_list args)
 {
 	int str = va_arg(args, int);
 
+	if (str == 0)
+		return (0);
+
 	_putchar(str);
 	return (1);
 }
