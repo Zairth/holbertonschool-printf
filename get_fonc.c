@@ -13,7 +13,7 @@ specif_t *get_specif_format()
 		{'s', print_string},
 		{'c', print_char},
 		{'d', print_int},
-		{'i', print_decimal},
+		{'i', print_int},
 		{'\0', NULL}};
 
 	return (specif_format);
