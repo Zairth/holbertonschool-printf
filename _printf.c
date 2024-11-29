@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 					i += 2;
 				} else
 				{
-					if (format[i] == '%' && format[i + 1] == '%')
+					if (format[i] == '%' && format[i + 1] == '%' && format[i + 2] != '%')
 					{
 						i++;
 						continue;
