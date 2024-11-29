@@ -20,6 +20,8 @@ int _printf(const char *format, ...)
 	{
 		while (format[i] != '\0')
 		{
+			if (format[i] == '%' && format[i + 1] == '\0')
+				break;
 			if (format[i] == '%')
 			{
 				j = find_specifier(format[i + 1], specif_format);
@@ -35,15 +37,13 @@ int _printf(const char *format, ...)
 						continue;
 					} else
 					{
-						_putchar(format[i]);
+						total_words += _putchar(format[i]);
 						i++;
-						total_words++;
 					}
 				}
 			} else
 			{
-				_putchar(format[i]);
-				total_words++;
+				total_words += _putchar(format[i]);
 				i++;
 			}
 		}
