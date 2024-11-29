@@ -8,7 +8,7 @@ This project was developed as an educational exercise to better understand varia
 
 ## Features
 
-The `printf` function supports the following format specifiers:
+The `_printf` function supports the following format specifiers:
 
 | Specifier   | Description                                 |
 |-------------|---------------------------------------------|
