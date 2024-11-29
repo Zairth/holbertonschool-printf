@@ -8,7 +8,7 @@ This project was developed as an educational exercise to better understand varia
 
 ## Features
 
-The `printf` function supports the following format specifiers:
+The `_printf` function supports the following format specifiers:
 
 | Specifier   | Description                                 |
 |-------------|---------------------------------------------|
@@ -21,7 +21,9 @@ The `printf` function supports the following format specifiers:
 
 ## Prototype
 
-`int _printf(const char *format, ...);`
+```c
+int _printf(const char *format, ...);
+```
 
 ## Usage
 
@@ -81,7 +83,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o printf
 
 | Limitation | Description |
 |------------|-------------|
-| Spécificateurs avancés | Ne prend pas en charge des spécificateurs de format comme `%f`, `%x`, ou `%p`. |
+| Advanced specifiers | Does not support any others format specifiers such as %f, %x, %o, %p or %ld ... |
 
 This project uses a simplified implementation and lacks some optimizations of the standard printf.  
 
