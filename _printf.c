@@ -131,6 +131,5 @@ int print_int(va_list args)
 	if (MIN_hit == 1)
 		n++;
 	_putchar(n + '0');
-	nm_char++;
-	return (nm_char);
+	return (++nm_char);
 }
