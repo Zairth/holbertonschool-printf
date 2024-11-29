@@ -1,17 +1,17 @@
-_printf
-Description
+<h1>_printf</h1>
+<h3>Description :</h3><br>
 The _printf project is a custom implementation of the standard printf function in C. It replicates the behavior of printf, allowing formatted output with simple format specifiers.
 
 This project was developed as an educational exercise to better understand variadic functions, structures, and argument handling in C.
 
-Features
-The _printf function supports the following format specifiers:
-
-Specifier	Description
-%s	Prints a string.
-%c	Prints a single character.
-%d, %i	Prints a signed integer in base 10.
-%%	Prints a literal % character.
+<h3>Features</h3><br>
+The _printf function supports the following format specifiers:<br>
+<ul>
+<li>%s : Prints a string.</li>
+<li>%c : Prints a single character.</li>
+<li>%d, %i : Prints a signed integer in base 10.</li>
+<li>%% : Prints a literal % character.</li>
+</ul>
 Prototype
 
 int _printf(const char *format, ...);
