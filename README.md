@@ -94,5 +94,9 @@ This project uses a simplified implementation and lacks some optimizations of th
 | **_putchar.c**    | Function to write a single character to stdout.        |
 | **get_fonc.c**  | Handles format specifiers and their functions.        |
 
+## MAN Page
+![## MAN Page](https://image.noelshack.com/fichiers/2024/48/5/1732885445-man-page.png)
+
+
 # Authors  
 ## Étienne Loichot   &   Luca Gimenez
