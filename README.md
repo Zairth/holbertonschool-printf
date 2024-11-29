@@ -53,7 +53,7 @@ Output: *Discount: 50% off!*
 ## Installation
 - #### Clone the repository:  
 ```git
-git clone <REPOSITORY_URL>
+git clone "https://github.com/Zairth/holbertonschool-printf.git"
 ```
 
 - #### Test with an example:  
@@ -76,15 +76,22 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o printf
 ./printf
 ```
 
-Limitations
+## Limitations
 
-Does not support advanced format specifiers like %f, %x, or %p.
-This project uses a simplified implementation and lacks some optimizations of the standard printf.
-Files
-File	Description
-main.h	Contains prototypes and structure definitions.
-_printf.c	Main implementation of _printf.
-_putchar.c	Function to write a single character to stdout.
-specifiers.c	Handles format specifiers and their functions.
-Authors
-This project was created by your team as part of an educational exercise. Feel free to add specific team member names here if needed.
+| Limitation | Description |
+|------------|-------------|
+| Spécificateurs avancés | Ne prend pas en charge des spécificateurs de format comme `%f`, `%x`, ou `%p`. |
+
+This project uses a simplified implementation and lacks some optimizations of the standard printf.  
+
+## Files
+
+| File          | Description                                            |
+|---------------|--------------------------------------------------------|
+| **main.h**        | Contains prototypes and structure definitions.        |
+| **_printf.c**     | Main implementation of _printf.                        |
+| **_putchar.c**    | Function to write a single character to stdout.        |
+| **get_fonc.c**  | Handles format specifiers and their functions.        |
+
+# Authors  
+## Étienne Loichot   &   Luca Gimenez
