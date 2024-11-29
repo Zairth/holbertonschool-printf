@@ -93,6 +93,7 @@ This project uses a simplified implementation and lacks some optimizations of th
 | **_printf.c**     | Main implementation of _printf.                        |
 | **_putchar.c**    | Function to write a single character to stdout.        |
 | **get_fonc.c**  | Handles format specifiers and their functions.        |
+| **man_3_printf.1** | The code of the Man Page. Use `man ./man_3_printf.1` to see the Man Page    | 
 
 ## MAN Page
 ![## MAN Page](https://image.noelshack.com/fichiers/2024/48/5/1732885445-man-page.png)
