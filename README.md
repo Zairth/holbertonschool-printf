@@ -101,7 +101,7 @@ This project uses a simplified implementation and lacks some optimizations of th
 ![## MAN Page](https://image.noelshack.com/fichiers/2024/48/5/1732885445-man-page.png)
 
 ## Flowchart
-![## Flowchart](https://image.noelshack.com/fichiers/2024/48/5/1732891647-flow-chart.png)
+![## Flowchart](https://image.noelshack.com/fichiers/2024/48/5/1732903736-new-flowchart.png)
 
 # Authors  
 ## Étienne Loichot   &   Luca Gimenez
