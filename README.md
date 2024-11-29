@@ -21,7 +21,9 @@ The `printf` function supports the following format specifiers:
 
 ## Prototype
 
-`int _printf(const char *format, ...);`
+```c
+int _printf(const char *format, ...);
+```
 
 ## Usage
 
