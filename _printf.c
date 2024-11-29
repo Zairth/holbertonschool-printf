@@ -130,6 +130,7 @@ int print_int(va_list args)
 	{
 		_putchar(0);
 		_putchar(0);
+		return (0);
 	}
 	if (MIN_hit == 1)
 		n++;
