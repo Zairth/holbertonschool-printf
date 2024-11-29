@@ -20,59 +20,64 @@ The `printf` function supports the following format specifiers:
 
 ## Prototype
 
-```c
-int _printf(const char *format, ...);
-Usage
-Include the main.h header file in your code.
-Call _printf with a format string and the appropriate arguments.
-Examples
-Printing strings and characters:
-c
-Copier le code
+`int _printf(const char *format, ...);`
+
+## Usage
+
+**1.  Include the main.h header file in your code.**  
+**2.  Call _printf with a format string and the appropriate arguments.**
+
+## Examples
+- #### Printing strings and characters:
+```c 
 _printf("Hello, %s!\n", "world");
-Output: Hello, world!
+```
+Output: *Hello, world!*
 
-Printing integers:
-c
-Copier le code
+--
+
+- #### Printing integers:
+```c 
 _printf("There are %d days in a week.\n", 7);
-Output: There are 7 days in a week.
+```
+Output: *There are 7 days in a week.*
 
-Printing a literal %:
-c
-Copier le code
-_printf("Discount: 50%% off!\n");
-Output: Discount: 50% off!
+--
 
-Installation
-Clone the repository:
-bash
-Copier le code
+- #### Printing a literal %:
+```c 
+_printf("There are %d days in a week.\n", 7);  
+```
+Output: *Discount: 50% off!*
+
+## Installation
+- #### Clone the repository:  
+```git
 git clone <REPOSITORY_URL>
-Compile the project using gcc:
-bash
-Copier le code
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o printf
-Run the executable:
-bash
-Copier le code
-./printf
-Test with an example:
-c
-Copier le code
+```
+
+- #### Test with an example:  
+```c
 #include "main.h"
 int main(void)
 {
     _printf("Hello, %s! %d days left.\n", "world", 5);
     return (0);
 }
-Then compile and run:
+```
 
-bash
-Copier le code
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o test
-./test
+- #### Compile the project using gcc:  
+```bash
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o printf
+```
+
+- #### Run the executable:  
+```bash
+./printf
+```
+
 Limitations
+
 Does not support advanced format specifiers like %f, %x, or %p.
 This project uses a simplified implementation and lacks some optimizations of the standard printf.
 Files
