@@ -1,6 +1,7 @@
 # _printf Project
 
-The **_printf** project is a custom implementation of the standard `printf` function in C. It replicates the behavior of `printf`, allowing formatted output with simple format specifiers.  
+The **_printf** project is a custom implementation of the standard `printf` function in C.  
+It replicates the behavior of `printf`, allowing formatted output with simple format specifiers.  
 This project was developed as an educational exercise to better understand variadic functions, structures, and argument handling in C.
 
 ---
