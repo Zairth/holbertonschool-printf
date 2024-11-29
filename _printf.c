@@ -18,10 +18,10 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	if (format != NULL)
 	{
+		if (format[i] == '%' && format[i + 1] == '\0' && i == 0)
+			return (-1);
 		while (format[i] != '\0')
 		{
-			if (format[i] == '%' && format[i + 1] == '\0' && i == 0)
-				return (-1);
 			if (format[i] == '%')
 			{
 				j = find_specifier(format[i + 1], specif_format);
